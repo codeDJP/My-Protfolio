@@ -1,147 +1,88 @@
-<!doctype html>
-<html>
+.gallery {
+  --g: 8px;   /* the gap */
+  --s: 400px; /* the size */
+  
+  display: grid;
+  border-radius: 50%;
+}
+.gallery > img {
+  grid-area: 1/1;
+  width: 400px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: translate(var(--_x,0),var(--_y,0));
+  cursor: pointer;
+  z-index: 0;
+  transition: .3s, z-index 0s .3s;
+}
+.gallery img:hover {
+  --_i: 1;
+  z-index: 1;
+  transition: transform .2s, clip-path .3s .2s, z-index 0s;
+}
+.gallery:hover img {
+  transform: translate(0,0);
+}
+.gallery > img:nth-child(1) {
+  clip-path: polygon(50% 50%,calc(50%*var(--_i,0)) calc(120%*var(--_i,0)),0 calc(100%*var(--_i,0)),0 0,100% 0,100% calc(100%*var(--_i,0)),calc(100% - 50%*var(--_i,0)) calc(120%*var(--_i,0)));
+  --_y: calc(-1*var(--g))
+}
+.gallery > img:nth-child(2) {
+  clip-path: polygon(50% 50%,calc(100% - 120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100% - 100%*var(--_i,0)) 0,100% 0,100% 100%,calc(100% - 100%*var(--_i,0)) 100%,calc(100% - 120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
+  --_x: var(--g)
+}
+.gallery > img:nth-child(3) {
+  clip-path: polygon(50% 50%,calc(100% - 50%*var(--_i,0)) calc(100% - 120%*var(--_i,0)),100% calc(100% - 120%*var(--_i,0)),100% 100%,0 100%,0 calc(100% - 100%*var(--_i,0)),calc(50%*var(--_i,0)) calc(100% - 120%*var(--_i,0)));
+  --_y: var(--g)
+}
+.gallery > img:nth-child(4) {
+  clip-path: polygon(50% 50%,calc(120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100%*var(--_i,0)) 0,0 0,0 100%,calc(100%*var(--_i,0)) 100%,calc(120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
+  --_x: calc(-1*var(--g))
+}
+
+/*body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: #3B8686;
+}
+*/
+body {
+  background: linear-gradient(-45deg, #26ccea, #ffb24e);
+background-size: 200% 800%;
+animation: gradient 15s ease infinite;
+height: 100vh;
+}
 
 
+.Heading {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #000;
+  animation: typing 5s steps(120) forwards infinite;
+  text-indent: 0em;
+  margin: 0;
+}
 
-<title>DJX</title>
-<link rel="stylesheet" type="text/css" href="Animation.css"> 
-<Head>
-<h1 style= "font-family:<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">Welcome to my protfolio</h1>
-
-
-<div class="gallery">
-  <img src="Assets/img/dinusha_fig.png" width="500px" alt="Dinusha Jayaranga Himself">
-
-  <img src="Assets/img/DJ.webp" width="500px" alt="Dinusha Jayaranga">
-
-  <img src="Assets/img/DJX.jpeg" width="500px" alt="dj_cruiseb">
-
-  <img src="Assets/img/DJR.jpg" width="500px" alt="Dinusha Jayaranga">
-</div>
+@keyframes typing {
+  from { width: 0em; }
+  to { width: 14em; }
+}
 
 
-</head>
-<body style = "color: black;""background-color:#ffb24e;">
+@keyframes gradient {
+0% {
+background-position: 0% 50%;
+}
+50% {
+background-position: 100% 50%;
+}
 
-<div class="d-flex flex-column justify-content-center w-100 h-100"></div>
+100% {
+background-position: 0% 50%;
+}
 
-
-<p class="Heading" style="font-size:300%;">
-<b>Hello, I'm Dinusha Jayaranga</b>
-</p>
-<p>#ThetaLoop</p>
-<br>
-<hr>
- I am a highly skilled and multi-faceted professional with a diverse set of skills and experience in the design, technology, and creative fields. I am a highly skilled software engineer with a strong background in web development and mobile app development. Additionally, I possess creative abilities as a graphic designer, proficient in creating logos and social media content, as well as 3D illustrations. I am a skilled project manager, marketing expert, and idea generator. I am physically strong and able to work long hours with a calm, kind, and determined attitude.
-
-<ul>
-<li>Bilingual language skills in English, and Sinhala</li>
-<li>IT Supports and maintains the computer systems, and installs, and configures hardware and software.</li>
-<li>Developing website, designing application UI/UX and the backend all in one package</li>
-<li>Accomplished communication skills, both written and verbal, developed through numerous essays and presentations during college.</li>
-<li>Ability to take the initiative and work well under pressure, ensuring strict deadlines are met, as successfully demonstrated during a work experience placement project. </li>
-<li>Flexibility, while maintaining enthusiasm and commitment to each project.</li>
-<li>Proficiency in all areas of Microsoft Office, including Excel, Word, and PowerPoint.</li>
-<li>As a Digital Editor, I create, edit, and publish digital content. good at working with a team of writers and graphic artists, coordinating their outputs.</li>
-<li>A class on driving skills</li>
-<li>Top-of-the-line marketing expert makes your company skyrocket</li>
-<li>Motivations guidance provider </li>
-</ul>
-
-<p style ="font-size:200%;"> Experience</p>
-
-
-<p>Freelancer On Call</p><i>2017</i> - PRESENT
-<ul>
-<li>Software, Website, Application Development</li>
-<li>Video editing, Illustrations, 2D Arts, 3D Modeling</li>
-<li>Microsoft Office works (sheets, presentations, word documents)</li>
-<li>Done low budget high-quality Website Designer and publisher</li>
-<li>Motion Tracking and Capturing</li>
-</ul>
-
-<p>Prospect member Leo Club Of Gampaha Metro <i>- 2021</i></p>
-<ul>
-
-<li>Chair a project called Kiddie Corps for children's day in 2021</li>
-<li>Helped multiple projects with Graphic Designing and Video Editing</li>
-
-</ul>
-
-<p>Global Academy of Further Education (GAFE) - Digital Marketing Executive <i> 2022 - 2023</i></p>
-<ul>
-
-<li>Graphic Designer and coordinator</li>
-<li>Web Developing and Building </li>
-<li>Full range Video editor</li>
-<li>Editor, Content writer, Designer, </li>
-<li>Social Media Handle </li>
-<li>Marketing analysis</li>
-<li>Marketing analysis</li>
-<i>(Also work out of the company in America Intranet for Web developing, Graphic designing, and Content writing under the same administration)</i>
-
-</ul>
-
-<p style = font-size:200%>Education</p>
-
-<p>Saegis Campus</p>
-<p><i>May 2022 - Present</i></p>
-Undergraduate student at Saegis campus
-In <b>Software Engineering</b>
-
-<p>Nalanda College, Colombo 10</p>
-<i>Jan 2007 - Aug 2020</i>
-<ul>
-<li>O/Ls pass</li>
-<li>A/Ls pass in Mathematics</li>
-</ul>
-
-<p>Advanced Technological and Research Institute, Sri Lanka</p>
-<i>June 2016 - June 2017</i>
-<ul>
-<li>A.T.A.R.I Certified professional software developer (With First Class)</li>
-<li><b>Diploma</b> in Android application development ( With distinction pass A) </li>
-</ul>
-
-<p Style = "font-size:200%;">Projects</p>
-<p>Armadrillo, The Drilling Probe | NASA Space Apps Challenge</p>
-<i>Oct 2021 - Oct 2021</i>
-<p>Armadrillo is a drilling probe that drills to the underground of a planet, or natural satellite of an asteroid while doing a basic search for elements and life forms on the way In future space missions space, explorers will highly consider subsurface planetary exploration by drilling deep into the core of the object as it will help them to study more about its interior and its history. So, we hope to fulfill one of the most significant needs for subsurface planetary exploration: a lightweight, portable drill that can also collect soil samples from different depths of the planet.</p>
-<br>
-<i>Project:- <a href ="www.compass2021.co">Compass2021</a></i>
-
-<p>IMPACT ON OUR LIFE FROM COVID-19 | EO Dashboard HackathonIMPACT ON OUR LIFE FROM COVID-19 | EO Dashboard Hackathon</p>
-<i>Jun 2021 - Sep 2021</i>
-We use Covid-19 related data from EO Dashboard and sources to analyze how human activities in communities of minority, low-income, tribal, and indigenous populations have changed as a result of COVID-19. We use 7 topics to approach the main challenge. They are Health, Mobility data, Social Trends, Agriculture, Air Quality, and Water quality.
-
-Our main target was analyzing how low-income people were doing in this covid pandemic situation we looked at many areas to two find what happened as people’s health, how their economy was affected, behaviors, and interests changings during the time, how they continued their activities such as work from home, online education and also, we looked into our agriculture how farmers work during the pandemic situation. 
-
-And we mainly focused on Sri Lanka because that is our country and we need to tell the world how it is going on in Sri Lanka. And also Sri Lankan people must be informed of what’s going on
-
-When we look at the data that we analyze, at this moment Sri Lanka faces a lot bigger problems when we look into health COVID-19 is now at a very critical point health staff is fighting very hard to control this situation. people's health was not the only thing affected by COVID-19. The economy is the other major thing affected by COVID-19. Globally most countries are locked down and under restriction laws for Sri Lanka, this is very jeopardizing because even before Covid-19, at a time when the Sri Lankan economy was in a state of decline the US dollar was rising and the Sri Lankan rupee was reporting depreciation continually.
-<i>Project:- <a href ="www.sites.google.com/view/compass-eodashhack/the-big-picture?pli=1">EO Dashboard HackathonIMPACT ON OUR LIFE FROM COVID-19</a></i>
-
-<p Style = "font-size:200%;">Awards</p>
-
-<h3>Nasa Space Apps Colombo Challenge 2021</h3>
-<i>Nasa Space Apps Colombo Challenge 2021</i>
-<p>Nasa Space Apps Colombo Challenge 2021</p>
-
-<p Style = "font-size:200%;">Hobbies & Interests</p>
-
-<ul>
-
-<li>Designing, Creating, Give ideas a life (Startup Projects)</li>
-<li>Sports (Basketball, Badminton,)</li>
-<li>Sports (Basketball, Badminton,)</li>
-<li>Travel(Outdoor Camping)</li>
-
-</ul>
-
-<div data-ux="Block" id="marquee_26617" data-scrolling="true" class="x-el x-el-div c1-1 c1-2 c1-4 c1-q c1-r c1-b c1-c c1-d c1-e c1-f c1-g"><div data-ux="Block" id="marquee_26617_banner" data-aid="MARQUEE_BANNER_RENDERED" data-name="banner" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g" style="animation-duration: 63.4714s;"><div data-ux="Block" id="marquee_26617_content" data-name="content" aria-hidden="false" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div data-ux="Block" data-aid="SOCIAL_SOCIAL_LINKS" class="x-el x-el-div c1-1 c1-2 c1-89 c1-1z c1-1a c1-19 c1-3e c1-3f c1-10 c1-8a c1-8b c1-16 c1-b c1-c c1-d c1-e c1-f c1-g"><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_FACEBOOK_LINK" aria-label="Facebook Social Link" href="https://www.facebook.com/dinushajayaranaga" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26618.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Facebook</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_INSTAGRAM_LINK" aria-label="Instagram Social Link" href="https://www.instagram.com/dj_cruiseb/" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26619.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Instagram</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_LINKEDIN_LINK" aria-label="LinkedIn Social Link" href="https://www.linkedin.com/in/dinushajayaranga/" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26620.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">LinkedIn</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_TIKTOK_LINK" aria-label="TikTok" href="https://www.tiktok.com/@dinushajayaranga" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26621.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">TikTok</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_TWITTER_LINK" aria-label="Twitter Social Link" href="https://www.twitter.com/Code_DJP" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26622.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Twitter</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_YOUTUBE_LINK" aria-label="YouTube Social Link" href="https://www.youtube.com/@sridinushow9508" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26623.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">YouTube</span></a></div></div><div data-ux="Block" id="marquee_26617_clones" data-name="clones" aria-hidden="true" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div data-ux="Block" data-name="content" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div data-ux="Block" data-aid="SOCIAL_SOCIAL_LINKS" class="x-el x-el-div c1-1 c1-2 c1-89 c1-1z c1-1a c1-19 c1-3e c1-3f c1-10 c1-8a c1-8b c1-16 c1-b c1-c c1-d c1-e c1-f c1-g"><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_FACEBOOK_LINK" aria-label="Facebook Social Link" href="https://www.facebook.com/dinushajayaranaga" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26624.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Facebook</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_INSTAGRAM_LINK" aria-label="Instagram Social Link" href="https://www.instagram.com/dj_cruiseb/" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26625.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Instagram</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_LINKEDIN_LINK" aria-label="LinkedIn Social Link" href="https://www.linkedin.com/in/dinushajayaranga/" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26626.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">LinkedIn</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_TIKTOK_LINK" aria-label="TikTok" href="https://www.tiktok.com/@dinushajayaranga" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26627.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">TikTok</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_TWITTER_LINK" aria-label="Twitter Social Link" href="https://www.twitter.com/Code_DJP" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26628.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Twitter</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_YOUTUBE_LINK" aria-label="YouTube Social Link" href="https://www.youtube.com/@sridinushow9508" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26629.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">YouTube</span></a></div></div><div data-ux="Block" data-name="content" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div data-ux="Block" data-aid="SOCIAL_SOCIAL_LINKS" class="x-el x-el-div c1-1 c1-2 c1-89 c1-1z c1-1a c1-19 c1-3e c1-3f c1-10 c1-8a c1-8b c1-16 c1-b c1-c c1-d c1-e c1-f c1-g"><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_FACEBOOK_LINK" aria-label="Facebook Social Link" href="https://www.facebook.com/dinushajayaranaga" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26630.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Facebook</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_INSTAGRAM_LINK" aria-label="Instagram Social Link" href="https://www.instagram.com/dj_cruiseb/" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26631.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Instagram</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_LINKEDIN_LINK" aria-label="LinkedIn Social Link" href="https://www.linkedin.com/in/dinushajayaranga/" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26632.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">LinkedIn</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_TIKTOK_LINK" aria-label="TikTok" href="https://www.tiktok.com/@dinushajayaranga" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26633.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">TikTok</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_TWITTER_LINK" aria-label="Twitter Social Link" href="https://www.twitter.com/Code_DJP" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26634.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Twitter</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_YOUTUBE_LINK" aria-label="YouTube Social Link" href="https://www.youtube.com/@sridinushow9508" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26635.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">YouTube</span></a></div></div><div data-ux="Block" data-name="content" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div data-ux="Block" data-aid="SOCIAL_SOCIAL_LINKS" class="x-el x-el-div c1-1 c1-2 c1-89 c1-1z c1-1a c1-19 c1-3e c1-3f c1-10 c1-8a c1-8b c1-16 c1-b c1-c c1-d c1-e c1-f c1-g"><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_FACEBOOK_LINK" aria-label="Facebook Social Link" href="https://www.facebook.com/dinushajayaranaga" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26636.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Facebook</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_INSTAGRAM_LINK" aria-label="Instagram Social Link" href="https://www.instagram.com/dj_cruiseb/" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26637.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Instagram</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_LINKEDIN_LINK" aria-label="LinkedIn Social Link" href="https://www.linkedin.com/in/dinushajayaranga/" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26638.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">LinkedIn</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_TIKTOK_LINK" aria-label="TikTok" href="https://www.tiktok.com/@dinushajayaranga" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26639.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">TikTok</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_TWITTER_LINK" aria-label="Twitter Social Link" href="https://www.twitter.com/Code_DJP" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26640.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Twitter</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_YOUTUBE_LINK" aria-label="YouTube Social Link" href="https://www.youtube.com/@sridinushow9508" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26641.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">YouTube</span></a></div></div><div data-ux="Block" data-name="content" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div data-ux="Block" data-aid="SOCIAL_SOCIAL_LINKS" class="x-el x-el-div c1-1 c1-2 c1-89 c1-1z c1-1a c1-19 c1-3e c1-3f c1-10 c1-8a c1-8b c1-16 c1-b c1-c c1-d c1-e c1-f c1-g"><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_FACEBOOK_LINK" aria-label="Facebook Social Link" href="https://www.facebook.com/dinushajayaranaga" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26642.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Facebook</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_INSTAGRAM_LINK" aria-label="Instagram Social Link" href="https://www.instagram.com/dj_cruiseb/" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26643.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Instagram</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_LINKEDIN_LINK" aria-label="LinkedIn Social Link" href="https://www.linkedin.com/in/dinushajayaranga/" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26644.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">LinkedIn</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_TIKTOK_LINK" aria-label="TikTok" href="https://www.tiktok.com/@dinushajayaranga" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26645.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">TikTok</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_TWITTER_LINK" aria-label="Twitter Social Link" href="https://www.twitter.com/Code_DJP" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26646.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Twitter</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_YOUTUBE_LINK" aria-label="YouTube Social Link" href="https://www.youtube.com/@sridinushow9508" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26647.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">YouTube</span></a></div></div><div data-ux="Block" data-name="content" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div data-ux="Block" data-aid="SOCIAL_SOCIAL_LINKS" class="x-el x-el-div c1-1 c1-2 c1-89 c1-1z c1-1a c1-19 c1-3e c1-3f c1-10 c1-8a c1-8b c1-16 c1-b c1-c c1-d c1-e c1-f c1-g"><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_FACEBOOK_LINK" aria-label="Facebook Social Link" href="https://www.facebook.com/dinushajayaranaga" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26648.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Facebook</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_INSTAGRAM_LINK" aria-label="Instagram Social Link" href="https://www.instagram.com/dj_cruiseb/" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26649.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Instagram</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_LINKEDIN_LINK" aria-label="LinkedIn Social Link" href="https://www.linkedin.com/in/dinushajayaranga/" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26650.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">LinkedIn</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_TIKTOK_LINK" aria-label="TikTok" href="https://www.tiktok.com/@dinushajayaranga" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26651.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">TikTok</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_TWITTER_LINK" aria-label="Twitter Social Link" href="https://www.twitter.com/Code_DJP" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26652.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">Twitter</span></a><a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_YOUTUBE_LINK" aria-label="YouTube Social Link" href="https://www.youtube.com/@sridinushow9508" data-typography="LinkAlpha" class="x-el x-el-a c1-1b c1-1c c1-1d c1-1e c1-1f c1-2c c1-1g c1-8c c1-b c1-2d c1-c c1-1n c1-1o c1-8d c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social2.group.Default.Link.Default.26653.click,click"><span role="heading" aria-level="NaN" data-ux="HeadingMiddle" data-typography="HeadingGamma" class="x-el x-el-span c1-1 c1-2 c1-1e c1-1f c1-6p c1-15 c1-13 c1-12 c1-14 c1-b c1-2d c1-2i c1-3v c1-2k c1-2l c1-2m c1-2n">YouTube</span></a></div></div></div></div></div>
-
-</body>
-
-</html>
+}
