@@ -17,11 +17,11 @@ function calculateBudget(salary, expenseReductions = {}, salaryIncrease = 0) {
 
   // Prioritize certain categories for lower salaries
   if (salary < 20000) {
-  transportationPct = 25;
-  foodPct = 25;
+  transportationPct = 30;
+  foodPct = 30;
   utilitiesPct = 15;
   entertainmentPct = 10;
-  personalPct = 15;
+  personalPct = 5;
   savingsPct = 10;
   }
   else if (salary < 40000) {
