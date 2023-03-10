@@ -8,12 +8,22 @@ function calculateBudget(salary, expenseReductions = {}, salaryIncrease = 0) {
   let savingsPct = 19.5;
 
   // Adjust the budget allocation percentages based on the salary increase
-  transportationPct -= salaryIncrease / 2;
-  foodPct -= salaryIncrease / 2;
-  utilitiesPct -= salaryIncrease / 4;
-  entertainmentPct -= salaryIncrease / 4;
-  personalPct -= salaryIncrease / 4;
-  savingsPct += salaryIncrease;
+  transportationPct += Math.max(salaryIncrease / 3, 0);
+  foodPct += Math.max(salaryIncrease / 3, 0);
+  utilitiesPct += Math.max(salaryIncrease / 6, 0);
+  entertainmentPct += Math.max(salaryIncrease / 6, 0);
+  personalPct += Math.max(salaryIncrease / 6, 0);
+  savingsPct += Math.max(salaryIncrease / 6, 0);
+
+  // Prioritize certain categories for lower salaries
+  if (salary < 10000) {
+    transportationPct = 30;
+    foodPct = 50;
+  } else if (salary < 40000) {
+    savingsPct = 35;
+  } else if (salary < 100000) {
+    entertainmentPct = 25;
+  }
 
   // Apply expense reductions if provided
   if (Object.keys(expenseReductions).length > 0) {
@@ -52,4 +62,4 @@ const expenseReductions = {
 };
 const salaryIncrease = 10;
 const budget = calculateBudget(salary, expenseReductions, salaryIncrease);
-console.log(budget); // { transportation: 8475, food: 9775, utilities: 5075, entertainment: 6525, personal: 8900, savings: 11050 }
+console.log(budget); // { transportation: 8625, food: 10025, utilities: 5125, entertainment: 7000, personal: 9200, savings: 11525 }
