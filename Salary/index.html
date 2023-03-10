@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Budget Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js"></script>
+  <style>
+		input[type="number"] {
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			margin-bottom: 20px;
+		}
+		
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		.result {
+			font-size: 18px;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Budget Calculator</h1>
+	<form>
+  <label for="salary-input">Enter your salary:</label>
+  <input type="number" id="salary-input" name="salary">
+  <button type="button" onclick="calculate()">Calculate</button>
+</form>
+
+<div id="budget-results"></div>
+
+<script>
+function calculate() {
+  let salary = parseInt(document.getElementById("salary-input").value);
+  let budget = calculateBudget(salary);
+  
+  let resultsDiv = document.getElementById("budget-results");
+  resultsDiv.innerHTML = `
+    <p>Transportation: Rs ${budget.transportation}</p>
+    <p>Food and groceries: Rs ${budget.food}</p>
+    <p>Utilities and bills: Rs ${budget.utilities}</p>
+    <p>Entertainment and hobbies: Rs ${budget.entertainment}</p>
+    <p>Personal expenses: Rs ${budget.personal}</p>
+    <p>Savings: Rs ${budget.savings}</p>
+  `;
+}
+</script>
+
+</body>
+</html>
