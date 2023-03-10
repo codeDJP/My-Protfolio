@@ -1,3 +1,18 @@
+.nav {
+  float: right;
+  margin-right: 20px;
+}
+
+.nav a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+
+
 .gallery {
   --g: 8px;   /* the gap */
   --s: 400px; /* the size */
