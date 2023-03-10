@@ -16,30 +16,38 @@ function calculateBudget(salary, expenseReductions = {}, salaryIncrease = 0) {
   savingsPct += Math.max(salaryIncrease / 6, 0);
 
   // Prioritize certain categories for lower salaries
-  if (salary < 10000) {
-  transportationPct = 20;
+  if (salary < 20000) {
+  transportationPct = 25;
   foodPct = 25;
   utilitiesPct = 15;
   entertainmentPct = 10;
   personalPct = 15;
-  savingsPct = 15;
+  savingsPct = 10;
   }
   else if (salary < 40000) {
   transportationPct = 15;
+  foodPct = 25;
+  utilitiesPct = 10;
+  entertainmentPct = 10;
+  personalPct = 20;
+  savingsPct = 20;  
+  }
+  else if (salary < 100000) {
+  transportationPct = 10;
+  foodPct = 20;
+  utilitiesPct = 10;
+  entertainmentPct = 15;
+  personalPct = 20;
+  savingsPct = 25;
+  }
+  else if (salary < 200000) {
+  transportationPct = 10;
   foodPct = 20;
   utilitiesPct = 10;
   entertainmentPct = 10;
   personalPct = 20;
-  savingsPct = 25;  
-  }
-  else if (salary < 100000) {
-  transportationPct = 10;
-  foodPct = 15;
-  utilitiesPct = 10;
-  entertainmentPct = 15;
-  personalPct = 20;
   savingsPct = 30;
-  }
+  } 
 
   // Apply expense reductions if provided
   if (Object.keys(expenseReductions).length > 0) {
