@@ -10,6 +10,18 @@
   text-decoration: none;
   color: #333;
 }
+.nav-container {
+  background-color: white;
+  border: 1px solid #ccc;
+  float: right;
+  margin-right: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+
+
 
 
 

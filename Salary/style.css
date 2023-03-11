@@ -1,60 +1,28 @@
-form {
-  background-color: #f2f2f2;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-input[type="number"],
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
 input[type="button"] {
-  background-color: #4CAF50;
+  background-color: #2ecc71;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 input[type="button"]:hover {
-  background-color: #3e8e41;
+  background-color: #27ae60;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  animation: button-glow 1s ease-in-out;
 }
 
-h1 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-body {
-  background: linear-gradient(-45deg, #26ccea, #ffb24e);
-background-size: 200% 800%;
-animation: gradient 15s ease infinite;
-height: 100vh;
-}
-
-
-.Heading {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 3px solid #000;
-  animation: typing 5s steps(120) forwards infinite;
-  text-indent: 0em;
-  margin: 0;
+@keyframes button-glow {
+  0% {
+    box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.7);
+  }
 }
